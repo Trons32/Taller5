@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Page JavaScript </title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/functions.js" ></script>
+</head>
+<body>
+    
+
+    <script>
+
+    const crearDivHijo = (rutaImg, divheader, textoImg) => {
+         var divHijoUno = crearElemento("div");
+         divHijoUno.classList.add("imgDiv");
+         
+         var imgHijo = crearElemento("img");
+         imgHijo.classList.add("img");
+         imgHijo.src = `${rutaImg}`;
+
+         var divTexto = crearElemento("div");
+         divHijoUno.classList.add("imgDiv");
+
+         agregarHijo(divHijoUno,imgHijo);
+
+         (divheader)
+         ?(
+            agregarHijo(divFlexContenedor, divHijoUno)
+         ):(
+            agregarHijo(divFlexContenedor2, divHijoUno)
+         )
+         
+     }
+
+     const crearDivHijo1 = (rutaImg1, rutaImg2) => {
+
+         var divHijoUno = crearElemento("div");
+         divHijoUno.classList.add("imgDiv");
+
+         var imgHijo = crearElemento("img");
+         imgHijo.classList.add("img1");
+         imgHijo.src = `${rutaImg1}`;
+
+         var imgHijoDos = crearElemento("img");
+         imgHijoDos.classList.add("img2");
+         imgHijoDos.src = `${rutaImg2}`;
+
+         agregarHijo(divHijoUno,imgHijo);
+         agregarHijo(divHijoUno,imgHijoDos);
+
+         agregarHijo(divFlexContenedor2, divHijoUno)
+         
+     }
+
+    
+
+     var h1 = crearElementoContexto("h1", "Ejemplo Javascript Grid");
+     var h2 = crearElementoContexto("h1", "Flex");
+
+     const divFlexContenedor = crearElemento("div");
+     divFlexContenedor.classList.add("flexContenedor");
+
+     const divFlexContenedor2 = crearElemento("div");
+     divFlexContenedor2.classList.add("gridContenedor");
+
+  
+      const menu = crearElemento("div");
+      menu.classList.add("menu");
+      const menuContenedor = crearElemento("div");
+      menuContenedor.classList.add("menuContenedor");
+      
+      const title = crearElementoContexto("H1","Book a Sesion");
+      title.classList.add("title");
+
+      const input = crearElemento("input");
+      input.classList.add("input");
+      input.placeholder = 'Nombre';
+
+      const input2 = crearElemento("input");
+      input2.classList.add("input");
+      input2.placeholder = 'Email Address';
+
+      const textArea = crearElemento("textArea");
+      textArea.classList.add("textarea");
+      textArea.placeholder = 'Mensaje';
+
+      const button = crearElemento("button");
+      button.textContent = 'Enviar';
+      button.classList.add("btn");
+
+      agregarHijo(menuContenedor, title);
+      agregarHijo(menuContenedor, input);
+      agregarHijo(menuContenedor, input2);
+      agregarHijo(menuContenedor, textArea);
+      agregarHijo(menu, menuContenedor);
+      agregarHijo(menu, button);
+
+
+     crearDivHijo("recursos/img/fit1.avif", true);
+     crearDivHijo("recursos/img/fit2.webp", true);
+     crearDivHijo("recursos/img/fit3.jpg", true);
+     crearDivHijo("recursos/img/fit4.webp", true);
+
+
+     crearDivHijo("recursos/img/fit5.avif", false);
+     crearDivHijo1( "recursos/img/fitness.jpg" ,"recursos/img/fitnessPie.jpg");
+     agregarHijo(divFlexContenedor2, menu);
+
+     agregarAlBody(divFlexContenedor);
+     agregarAlBody(divFlexContenedor2);
+
+
+    </script>
+
+
+</body>
+</html>
